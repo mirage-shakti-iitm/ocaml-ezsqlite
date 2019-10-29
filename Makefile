@@ -1,7 +1,7 @@
 .PHONY: all
 all: lib/sqlite3_new.c lib/ezsqlite_stubs.c
-	riscv64-unknown-elf-gcc  -mcmodel=medany -o lib/sqlite3_new.o -c lib/sqlite3_new.c
-	riscv64-unknown-elf-gcc  -mcmodel=medany -o lib/ezsqlite_stubs.o -c lib/ezsqlite_stubs.c
+	riscv64-unknown-elf-gcc  -o lib/sqlite3_new.o -c lib/sqlite3_new.c
+	riscv64-unknown-elf-gcc  -o lib/ezsqlite_stubs.o -c lib/ezsqlite_stubs.c
 	riscv64-unknown-elf-ar qc libezsqlite_stubs.a  lib/sqlite3_new.o lib/ezsqlite_stubs.o
 	riscv64-unknown-elf-ranlib libezsqlite_stubs.a 
 
