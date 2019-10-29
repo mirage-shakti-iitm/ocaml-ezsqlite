@@ -9,6 +9,7 @@ dev-repo: "git+https://github.com/zshipko/ocaml-ezsqlite.git"
 doc: "https://zshipko.github.io/ocaml-ezsqlite/doc"
 build: [
     ["dune" "build" "-x" "riscv" "-p" "ezsqlite" "-j" jobs]
+    ["sh" "./build.sh"]
 ]
 depends: [
     "dune" {build}
