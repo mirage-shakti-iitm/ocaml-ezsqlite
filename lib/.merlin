@@ -1,0 +1,12 @@
+EXCLUDE_QUERY_DIR
+B /home/sai/.opam/4.07.0/lib/bigarray-compat
+B /home/sai/.opam/4.07.0/lib/cstruct
+B /home/sai/.opam/4.07.0/lib/hex
+B /home/sai/.opam/4.07.0/lib/ocaml
+B ../_build/default/lib/.ezsqlite.objs/byte
+S /home/sai/.opam/4.07.0/lib/bigarray-compat
+S /home/sai/.opam/4.07.0/lib/cstruct
+S /home/sai/.opam/4.07.0/lib/hex
+S /home/sai/.opam/4.07.0/lib/ocaml
+S .
+FLG -w @a-4-29-40-41-42-44-45-48-58-59-60-40 -strict-sequence -strict-formats -short-paths -keep-locs
