@@ -1,9 +1,16 @@
 .PHONY: all clean
 all: lib/sqlite3_new.c lib/ezsqlite_stubs.c
-	riscv64-unknown-linux-gnu-gcc -I/home/sai/.opam/4.07.0/riscv-sysroot/lib/ocaml -c lib/sqlite3_new.c
-	riscv64-unknown-linux-gnu-gcc -I/home/sai/.opam/4.07.0/riscv-sysroot/lib/ocaml -c lib/ezsqlite_stubs.c
-	riscv64-unknown-linux-gnu-ar rcs libezsqlite_stubs.a ezsqlite_stubs.o sqlite3_new.o
-	riscv64-unknown-linux-gnu-ranlib libezsqlite_stubs.a 
+	riscv64-unknown-linux-gnu-gcc -Os -fno-strict-aliasing -fwrapv -fPIC -D_FILE_OFFSET_BITS=64 -D_REENTRANT   -c -g -g -g '-I/home/sai/.opam/4.07.0/riscv-sysroot/lib/bigarray-compat' '-I/home/sai/.opam/4.07.0/riscv-sysroot/lib/cstruct' '-I/home/sai/.opam/4.07.0/riscv-sysroot/lib/hex' -I'/home/sai/.opam/4.07.0/riscv-sysroot/lib/ocaml' 'ezsqlite_stubs.c'
+	riscv64-unknown-linux-gnu-gcc -Os -fno-strict-aliasing -fwrapv -fPIC -D_FILE_OFFSET_BITS=64 -D_REENTRANT   -c -g -g -g '-I/home/sai/.opam/4.07.0/riscv-sysroot/lib/bigarray-compat' '-I/home/sai/.opam/4.07.0/riscv-sysroot/lib/cstruct' '-I/home/sai/.opam/4.07.0/riscv-sysroot/lib/hex' -I'/home/sai/.opam/4.07.0/riscv-sysroot/lib/ocaml' 'sqlite3_new.c'
+	# riscv64-unknown-linux-gnu-gcc -shared -g -o ./dllezsqlite_stubs.so ezsqlite_stubs.o sqlite3_new.o     
+	riscv64-unknown-linux-gnu-ar rc ./libezsqlite_stubs.a  ezsqlite_stubs.o sqlite3_new.o
+	riscv64-unknown-linux-gnu-ranlib ./libezsqlite_stubs.a
+
+
+	# riscv64-unknown-linux-gnu-gcc -I/home/sai/.opam/4.07.0/riscv-sysroot/lib/ocaml -o sqlite3_new.o lib/sqlite3_new.c
+	# riscv64-unknown-linux-gnu-gcc -I/home/sai/.opam/4.07.0/riscv-sysroot/lib/ocaml -o ezsqlite_stubs.o lib/ezsqlite_stubs.c
+	# riscv64-unknown-linux-gnu-ar rcs libezsqlite_stubs.a ezsqlite_stubs.o sqlite3_new.o
+	# riscv64-unknown-linux-gnu-ranlib libezsqlite_stubs.a 
 
 clean:
 	rm *.o
