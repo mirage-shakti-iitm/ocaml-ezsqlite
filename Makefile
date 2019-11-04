@@ -2,7 +2,7 @@
 all: lib/sqlite3_new.c lib/ezsqlite_stubs.c
 	riscv64-unknown-linux-gnu-gcc -I/home/sai/.opam/4.07.0/riscv-sysroot/lib/ocaml -c lib/sqlite3_new.c
 	riscv64-unknown-linux-gnu-gcc -I/home/sai/.opam/4.07.0/riscv-sysroot/lib/ocaml -c lib/ezsqlite_stubs.c
-	riscv64-unknown-linux-gnu-ar qc libezsqlite_stubs.a sqlite3_new.o ezsqlite_stubs.o
+	riscv64-unknown-linux-gnu-ar rcs libezsqlite_stubs.a ezsqlite_stubs.o sqlite3_new.o
 	riscv64-unknown-linux-gnu-ranlib libezsqlite_stubs.a 
 
 clean:
