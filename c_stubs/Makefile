@@ -33,3 +33,4 @@ clean:
 
 # CXX_INCLUDES = -I/home/sai/.opam/4.07.0/.opam-switch/build/ocaml-boot-riscv.0.1/include -I/home/sai/.opam/4.07.0/.opam-switch/build/ocaml-boot-riscv.0.1/include/ocaml-boot-riscv -I/home/sai/.opam/4.07.0/.opam-switch/build/ocaml-boot-riscv.0.1/src 
 
+# /home/sai/Shakti_TEE_Practical/mirage-shakti/ocaml-ezsqlite/c_stubs
