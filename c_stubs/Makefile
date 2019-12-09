@@ -2,10 +2,10 @@
 all: ../lib/sqlite3_new.c ../lib/ezsqlite_stubs.c
 	# riscv64-unknown-elf-clang -Os -fno-strict-aliasing -fwrapv -fPIC -D_FILE_OFFSET_BITS=64 -D_REENTRANT   -c -g -g -g '-I/home/sai/.opam/4.07.0/riscv-sysroot/lib/bigarray-compat' '-I/home/sai/.opam/4.07.0/riscv-sysroot/lib/cstruct' '-I/home/sai/.opam/4.07.0/riscv-sysroot/lib/hex' -I'/home/sai/.opam/4.07.0/riscv-sysroot/lib/ocaml' 'lib/ezsqlite_stubs.c'
 	# riscv64-unknown-elf-clang -Os -fno-strict-aliasing -fwrapv -fPIC -D_FILE_OFFSET_BITS=64 -D_REENTRANT   -c -g -g -g '-I/home/sai/.opam/4.07.0/riscv-sysroot/lib/bigarray-compat' '-I/home/sai/.opam/4.07.0/riscv-sysroot/lib/cstruct' '-I/home/sai/.opam/4.07.0/riscv-sysroot/lib/hex' -I'/home/sai/.opam/4.07.0/riscv-sysroot/lib/ocaml' 'lib/sqlite3_new.c'
-	riscv64-unknown-elf-gcc -mcmodel=medany -Os -fno-strict-aliasing -fwrapv -fPIC -D_FILE_OFFSET_BITS=64 -D_REENTRANT -c -g -g -g '-I/home/sai/.opam/4.07.0/riscv-sysroot/lib/bigarray-compat' '-I/home/sai/.opam/4.07.0/riscv-sysroot/lib/cstruct' '-I/home/sai/.opam/4.07.0/riscv-sysroot/lib/hex' -I'/home/sai/.opam/4.07.0/riscv-sysroot/lib/ocaml' '../lib/ezsqlite_stubs.c'
-	riscv64-unknown-elf-gcc -mcmodel=medany -Os -fno-strict-aliasing -fwrapv -fPIC -D_FILE_OFFSET_BITS=64 -D_REENTRANT -c -g -g -g '-I/home/sai/.opam/4.07.0/riscv-sysroot/lib/bigarray-compat' '-I/home/sai/.opam/4.07.0/riscv-sysroot/lib/cstruct' '-I/home/sai/.opam/4.07.0/riscv-sysroot/lib/hex' -I'/home/sai/.opam/4.07.0/riscv-sysroot/lib/ocaml' '../lib/sqlite3_new.c'
-	riscv64-unknown-elf-ar rc libezsqlite_stubs.a  ezsqlite_stubs.o sqlite3_new.o
-	riscv64-unknown-elf-ranlib libezsqlite_stubs.a
+	clang -mcmodel=medium -Os -fno-strict-aliasing -fwrapv -fPIC -D_FILE_OFFSET_BITS=64 -D_REENTRANT -c -g -g -g '-I/home/sai/.opam/4.07.0/riscv-sysroot/lib/bigarray-compat' '-I/home/sai/.opam/4.07.0/riscv-sysroot/lib/cstruct' '-I/home/sai/.opam/4.07.0/riscv-sysroot/lib/hex' -I'/home/sai/.opam/4.07.0/riscv-sysroot/lib/ocaml' '../lib/ezsqlite_stubs.c'
+	clang -mcmodel=medany -Os -fno-strict-aliasing -fwrapv -fPIC -D_FILE_OFFSET_BITS=64 -D_REENTRANT -c -g -g -g '-I/home/sai/.opam/4.07.0/riscv-sysroot/lib/bigarray-compat' '-I/home/sai/.opam/4.07.0/riscv-sysroot/lib/cstruct' '-I/home/sai/.opam/4.07.0/riscv-sysroot/lib/hex' -I'/home/sai/.opam/4.07.0/riscv-sysroot/lib/ocaml' '../lib/sqlite3_new.c'
+	llvm-ar rc libezsqlite_stubs.a  ezsqlite_stubs.o sqlite3_new.o
+	llvm-ranlib libezsqlite_stubs.a
 
 
 	# riscv64-unknown-linux-gnu-gcc -I/home/sai/.opam/4.07.0/riscv-sysroot/lib/ocaml -o sqlite3_new.o lib/sqlite3_new.c
