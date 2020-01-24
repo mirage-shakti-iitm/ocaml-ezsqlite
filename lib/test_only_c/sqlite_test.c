@@ -1,6 +1,6 @@
 #include "sqlite3.h"
 #include <stdio.h>
-#include "external.h"
+// #include "external.h"
 
 int main(void) {
     

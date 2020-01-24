@@ -48,23 +48,23 @@
 
 // #ifndef SQLITE_OMIT_ALTERTABLE
 // #ifndef SQLITE_OMIT_AUTHORIZATION
-// #ifndef SQLITE_OMIT_VIRTUALTABLE
+// #define SQLITE_OMIT_VIRTUALTABLE 1 // enabling this so that variable no of arguments used in vtab can be eliminated
 // #ifndef SQLITE_OMIT_VIEW
 // #ifndef SQLITE_OMIT_FOREIGN_KEY
 // #ifndef SQLITE_OMIT_AUTOINCREMENT
 // #ifndef SQLITE_OMIT_FOREIGN_KEY
 // #ifndef SQLITE_OMIT_TRIGGER
-#define SQLITE_OMIT_ANALYZE 1 // sairam
+// #define SQLITE_OMIT_ANALYZE 1 // sairam
 // #ifndef SQLITE_OMIT_ATTACH
 // #ifndef SQLITE_OMIT_PAGER_PRAGMAS
 // #ifndef SQLITE_OMIT_UPSERT
-// #ifndef SQLITE_OMIT_VACUUM
+// #define SQLITE_OMIT_VACUUM 1 // enabling this so that variable no of arguments used in vacuum can be eliminated
 // #ifndef SQLITE_OMIT_INCRBLOB
 // #ifndef SQLITE_OMIT_AUTOVACUUM
 // SQLITE_OMIT_WAL
 // SQLITE_OMIT_QUICKBALANCE
 // #ifndef SQLITE_OMIT_BTREECOUNT
-// #ifndef SQLITE_OMIT_INTEGRITY_CHECK
+#define SQLITE_OMIT_INTEGRITY_CHECK 1
 // SQLITE_OMIT_SUBQUERY
 // #ifndef SQLITE_OMIT_TRUNCATE_OPTIMIZATION
 // #ifndef SQLITE_OMIT_DATETIME_FUNCS
