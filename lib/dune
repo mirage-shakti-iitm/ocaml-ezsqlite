@@ -1,6 +1,6 @@
 (library
     (name ezsqlite)
     (libraries str hex)
-    (c_names sqlite3_riscv_fat ezsqlite_stubs)
+    (c_names sqlite3_new ezsqlite_stubs)
     (public_name ezsqlite)
     (c_flags (-g)))
