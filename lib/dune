@@ -1,6 +1,6 @@
 (library
  (name ezsqlite)
  (libraries str hex)
- (c_names sqlite3_new ezsqlite_stubs)
- (c_library_flags -mcmodel=medany -g)
+; (c_names sqlite3_new ezsqlite_stubs)
+; (c_library_flags -mcmodel=medany -g)
  (public_name ezsqlite))
