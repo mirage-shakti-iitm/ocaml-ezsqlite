@@ -1,0 +1,23 @@
+4.11.1+riscv
+
+$ (cd _build/default.riscv/lib && /home/sai/Shakti-TEE-Build/riscv/bin/riscv64-unknown-linux-gnu-gcc -O2 -fno-strict-aliasing -fwrapv -fPIC -D_FILE_OFFSET_BITS=64 -D_REENTRANT -g -mcmodel=medany -g -I /home/sai/.opam/4.11.1+riscv/riscv-sysroot/lib/ocaml -I /home/sai/.opam/4.11.1+riscv/riscv-sysroot/lib/bigarray-compat -I /home/sai/.opam/4.11.1+riscv/riscv-sysroot/lib/cstruct -I /home/sai/.opam/4.11.1+riscv/riscv-sysroot/lib/hex -o sqlite3_new.o -c sqlite3_new.c)
+> sqlite3_new.c: In function 'valueFromExpr':
+> sqlite3_new.c:76075:21: warning: integer overflow in expression '-9223372036854775808' of type 'long long int' results in '-9223372036854775808' [-Woverflow]
+> 76075 |         pVal->u.r = -(double)SMALLEST_INT64;
+>       |                     ^
+$ (cd _build/default.riscv && /home/sai/.opam/4.11.1+riscv/riscv-sysroot/bin/ocamlmklib -g -o lib/ezsqlite_stubs lib/ezsqlite_stubs.o lib/sqlite3_new.o)
+$ (cd _build/default.riscv && /home/sai/.opam/4.11.1+riscv/riscv-sysroot/bin/ocamlopt -w -40 -g -shared -linkall -I lib -o lib/ezsqlite.cmxs lib/ezsqlite.cmxa)
+
+
+
+
+
+4.07.0+riscv
+
+$ (cd _build/default.riscv/lib && /home/sai/.opam/4.07.0+riscv/riscv-sysroot/bin/ocamlc -g -I /home/sai/.opam/4.07.0+riscv/riscv-sysroot/lib/bigarray-compat -I /home/sai/.opam/4.07.0+riscv/riscv-sysroot/lib/cstruct -I /home/sai/.opam/4.07.0+riscv/riscv-sysroot/lib/hex -ccopt -g -ccopt -mcmodel=medany -ccopt -g -o sqlite3_new.o sqlite3_new.c)
+> sqlite3_new.c: In function 'valueFromExpr':
+> sqlite3_new.c:76075:21: warning: integer overflow in expression '-9223372036854775808' of type 'long long int' results in '-9223372036854775808' [-Woverflow]
+> 76075 |         pVal->u.r = -(double)SMALLEST_INT64;
+>       |                     ^
+$ (cd _build/default.riscv && /home/sai/.opam/4.07.0+riscv/riscv-sysroot/bin/ocamlmklib -g -o lib/ezsqlite_stubs lib/ezsqlite_stubs.o lib/sqlite3_new.o)
+$ (cd _build/default.riscv && /home/sai/.opam/4.07.0+riscv/riscv-sysroot/bin/ocamlopt -w -40 -g -shared -linkall -I lib -o lib/ezsqlite.cmxs lib/ezsqlite.cmxa)

@@ -1,0 +1,306 @@
+# dune build -x riscv -p ezsqlite
+# OCAMLPARAM: unset
+# Workspace root: /home/sai/Shakti-TEE-Practical/mirage-shakti/ocaml-ezsqlite
+$ /usr/bin/nproc > /tmp/dunefead86.output 2> /dev/null
+# Auto-detected concurrency: 8
+# disable binary cache
+$ /home/sai/.opam/4.11.1+riscv/bin/ocamlc.opt -config > /tmp/duneccdb79.output
+$ /home/sai/.opam/4.11.1+riscv/bin/ocamlfind printconf conf > /tmp/dune1a7060.output
+$ /home/sai/.opam/4.11.1+riscv/bin/ocamlfind -toolchain riscv printconf path > /tmp/dune5c164f.output
+$ /home/sai/.opam/4.11.1+riscv/riscv-sysroot/bin/ocamlc -config > /tmp/dune6df8fc.output
+# Dune context:
+#  { name = "default"
+#  ; kind = "default"
+#  ; profile = Release
+#  ; merlin = true
+#  ; for_host = None
+#  ; fdo_target_exe = None
+#  ; build_dir = "default"
+#  ; toplevel_path = Some External "/home/sai/.opam/4.11.1+riscv/lib/toplevel"
+#  ; ocaml_bin = External "/home/sai/.opam/4.11.1+riscv/bin"
+#  ; ocaml = Ok External "/home/sai/.opam/4.11.1+riscv/bin/ocaml"
+#  ; ocamlc = External "/home/sai/.opam/4.11.1+riscv/bin/ocamlc.opt"
+#  ; ocamlopt = Ok External "/home/sai/.opam/4.11.1+riscv/bin/ocamlopt.opt"
+#  ; ocamldep = Ok External "/home/sai/.opam/4.11.1+riscv/bin/ocamldep.opt"
+#  ; ocamlmklib = Ok External "/home/sai/.opam/4.11.1+riscv/bin/ocamlmklib.opt"
+#  ; env =
+#      map
+#        { "INSIDE_DUNE" :
+#            "/home/sai/Shakti-TEE-Practical/mirage-shakti/ocaml-ezsqlite/_build/default"
+#        ; "OCAMLFIND_IGNORE_DUPS_IN" :
+#            "/home/sai/Shakti-TEE-Practical/mirage-shakti/ocaml-ezsqlite/_build/install/default/lib"
+#        ; "OCAMLPATH" :
+#            "/home/sai/Shakti-TEE-Practical/mirage-shakti/ocaml-ezsqlite/_build/install/default/lib"
+#        ; "OCAMLTOP_INCLUDE_PATH" :
+#            "/home/sai/Shakti-TEE-Practical/mirage-shakti/ocaml-ezsqlite/_build/install/default/lib/toplevel"
+#        ; "OCAML_COLOR" : "always"
+#        ; "OPAMCOLOR" : "always"
+#        }
+#  ; findlib_path = [ External "/home/sai/.opam/4.11.1+riscv/lib" ]
+#  ; arch_sixtyfour = true
+#  ; natdynlink_supported = true
+#  ; supports_shared_libraries = true
+#  ; ocaml_config =
+#      { version = "4.11.1"
+#      ; standard_library_default = "/home/sai/.opam/4.11.1+riscv/lib/ocaml"
+#      ; standard_library = "/home/sai/.opam/4.11.1+riscv/lib/ocaml"
+#      ; standard_runtime = "the_standard_runtime_variable_was_deleted"
+#      ; ccomp_type = "cc"
+#      ; c_compiler = "gcc"
+#      ; ocamlc_cflags = [ "-O2"; "-fno-strict-aliasing"; "-fwrapv"; "-fPIC" ]
+#      ; ocamlc_cppflags = [ "-D_FILE_OFFSET_BITS=64"; "-D_REENTRANT" ]
+#      ; ocamlopt_cflags =
+#          [ "-O2"; "-fno-strict-aliasing"; "-fwrapv"; "-fPIC" ]
+#      ; ocamlopt_cppflags = [ "-D_FILE_OFFSET_BITS=64"; "-D_REENTRANT" ]
+#      ; bytecomp_c_compiler =
+#          [ "gcc"
+#          ; "-O2"
+#          ; "-fno-strict-aliasing"
+#          ; "-fwrapv"
+#          ; "-fPIC"
+#          ; "-D_FILE_OFFSET_BITS=64"
+#          ; "-D_REENTRANT"
+#          ]
+#      ; bytecomp_c_libraries = [ "-lm"; "-ldl"; "-lpthread" ]
+#      ; native_c_compiler =
+#          [ "gcc"
+#          ; "-O2"
+#          ; "-fno-strict-aliasing"
+#          ; "-fwrapv"
+#          ; "-fPIC"
+#          ; "-D_FILE_OFFSET_BITS=64"
+#          ; "-D_REENTRANT"
+#          ]
+#      ; native_c_libraries = [ "-lm"; "-ldl" ]
+#      ; cc_profile = []
+#      ; architecture = "amd64"
+#      ; model = "default"
+#      ; int_size = 63
+#      ; word_size = 64
+#      ; system = "linux"
+#      ; asm = [ "as" ]
+#      ; asm_cfi_supported = true
+#      ; with_frame_pointers = false
+#      ; ext_exe = ""
+#      ; ext_obj = ".o"
+#      ; ext_asm = ".s"
+#      ; ext_lib = ".a"
+#      ; ext_dll = ".so"
+#      ; os_type = "Unix"
+#      ; default_executable_name = "a.out"
+#      ; systhread_supported = true
+#      ; host = "x86_64-pc-linux-gnu"
+#      ; target = "x86_64-pc-linux-gnu"
+#      ; profiling = false
+#      ; flambda = false
+#      ; spacetime = false
+#      ; safe_string = true
+#      ; exec_magic_number = "Caml1999X028"
+#      ; cmi_magic_number = "Caml1999I028"
+#      ; cmo_magic_number = "Caml1999O028"
+#      ; cma_magic_number = "Caml1999A028"
+#      ; cmx_magic_number = "Caml1999Y028"
+#      ; cmxa_magic_number = "Caml1999Z028"
+#      ; ast_impl_magic_number = "Caml1999M028"
+#      ; ast_intf_magic_number = "Caml1999N028"
+#      ; cmxs_magic_number = "Caml1999D028"
+#      ; cmt_magic_number = "Caml1999T028"
+#      ; natdynlink_supported = true
+#      ; supports_shared_libraries = true
+#      ; windows_unicode = false
+#      }
+#  }
+# Dune context:
+#  { name = "default.riscv"
+#  ; kind = "default"
+#  ; profile = Release
+#  ; merlin = false
+#  ; for_host = Some "default"
+#  ; fdo_target_exe = None
+#  ; build_dir = "default.riscv"
+#  ; toplevel_path = Some External "/home/sai/.opam/4.11.1+riscv/lib/toplevel"
+#  ; ocaml_bin = External "/home/sai/.opam/4.11.1+riscv/riscv-sysroot/bin"
+#  ; ocaml = Ok External "/home/sai/.opam/4.11.1+riscv/bin/ocaml"
+#  ; ocamlc = External "/home/sai/.opam/4.11.1+riscv/riscv-sysroot/bin/ocamlc"
+#  ; ocamlopt =
+#      Ok External "/home/sai/.opam/4.11.1+riscv/riscv-sysroot/bin/ocamlopt"
+#  ; ocamldep =
+#      Ok External "/home/sai/.opam/4.11.1+riscv/riscv-sysroot/bin/ocamldep"
+#  ; ocamlmklib =
+#      Ok External "/home/sai/.opam/4.11.1+riscv/riscv-sysroot/bin/ocamlmklib"
+#  ; env =
+#      map
+#        { "INSIDE_DUNE" :
+#            "/home/sai/Shakti-TEE-Practical/mirage-shakti/ocaml-ezsqlite/_build/default.riscv"
+#        ; "OCAMLFIND_IGNORE_DUPS_IN" :
+#            "/home/sai/Shakti-TEE-Practical/mirage-shakti/ocaml-ezsqlite/_build/install/default.riscv/lib"
+#        ; "OCAMLPATH" :
+#            "/home/sai/Shakti-TEE-Practical/mirage-shakti/ocaml-ezsqlite/_build/install/default.riscv/lib"
+#        ; "OCAMLTOP_INCLUDE_PATH" :
+#            "/home/sai/Shakti-TEE-Practical/mirage-shakti/ocaml-ezsqlite/_build/install/default.riscv/lib/toplevel"
+#        ; "OCAML_COLOR" : "always"
+#        ; "OPAMCOLOR" : "always"
+#        ; "destdir" : "/home/sai/.opam/4.11.1+riscv/riscv-sysroot/lib"
+#        ; "ocamlc" : "/home/sai/.opam/4.11.1+riscv/riscv-sysroot/bin/ocamlc"
+#        ; "ocamlcp" : "/home/sai/.opam/4.11.1+riscv/riscv-sysroot/bin/ocamlcp"
+#        ; "ocamldep" :
+#            "/home/sai/.opam/4.11.1+riscv/riscv-sysroot/bin/ocamldep"
+#        ; "ocamlmklib" :
+#            "/home/sai/.opam/4.11.1+riscv/riscv-sysroot/bin/ocamlmklib"
+#        ; "ocamlopt" :
+#            "/home/sai/.opam/4.11.1+riscv/riscv-sysroot/bin/ocamlopt"
+#        ; "path" : "/home/sai/.opam/4.11.1+riscv/riscv-sysroot/lib"
+#        ; "stdlib" : "/home/sai/.opam/4.11.1+riscv/riscv-sysroot/lib/ocaml"
+#        }
+#  ; findlib_path =
+#      [ External "/home/sai/.opam/4.11.1+riscv/riscv-sysroot/lib" ]
+#  ; arch_sixtyfour = true
+#  ; natdynlink_supported = true
+#  ; supports_shared_libraries = true
+#  ; ocaml_config =
+#      { version = "4.11.1"
+#      ; standard_library_default =
+#          "/home/sai/.opam/4.11.1+riscv/riscv-sysroot/lib/ocaml"
+#      ; standard_library =
+#          "/home/sai/.opam/4.11.1+riscv/riscv-sysroot/lib/ocaml"
+#      ; standard_runtime = "the_standard_runtime_variable_was_deleted"
+#      ; ccomp_type = "cc"
+#      ; c_compiler = "riscv64-unknown-linux-gnu-gcc"
+#      ; ocamlc_cflags = [ "-O2"; "-fno-strict-aliasing"; "-fwrapv"; "-fPIC" ]
+#      ; ocamlc_cppflags = [ "-D_FILE_OFFSET_BITS=64"; "-D_REENTRANT" ]
+#      ; ocamlopt_cflags =
+#          [ "-O2"; "-fno-strict-aliasing"; "-fwrapv"; "-fPIC" ]
+#      ; ocamlopt_cppflags = [ "-D_FILE_OFFSET_BITS=64"; "-D_REENTRANT" ]
+#      ; bytecomp_c_compiler =
+#          [ "riscv64-unknown-linux-gnu-gcc"
+#          ; "-O2"
+#          ; "-fno-strict-aliasing"
+#          ; "-fwrapv"
+#          ; "-fPIC"
+#          ; "-D_FILE_OFFSET_BITS=64"
+#          ; "-D_REENTRANT"
+#          ]
+#      ; bytecomp_c_libraries = [ "-lm"; "-ldl"; "-lpthread" ]
+#      ; native_c_compiler =
+#          [ "riscv64-unknown-linux-gnu-gcc"
+#          ; "-O2"
+#          ; "-fno-strict-aliasing"
+#          ; "-fwrapv"
+#          ; "-fPIC"
+#          ; "-D_FILE_OFFSET_BITS=64"
+#          ; "-D_REENTRANT"
+#          ]
+#      ; native_c_libraries = [ "-lm"; "-ldl" ]
+#      ; cc_profile = []
+#      ; architecture = "riscv"
+#      ; model = "riscv64"
+#      ; int_size = 63
+#      ; word_size = 64
+#      ; system = "linux"
+#      ; asm = [ "riscv64-unknown-linux-gnu-as" ]
+#      ; asm_cfi_supported = true
+#      ; with_frame_pointers = false
+#      ; ext_exe = ""
+#      ; ext_obj = ".o"
+#      ; ext_asm = ".s"
+#      ; ext_lib = ".a"
+#      ; ext_dll = ".so"
+#      ; os_type = "Unix"
+#      ; default_executable_name = "a.out"
+#      ; systhread_supported = true
+#      ; host = "x86_64-pc-linux-gnu"
+#      ; target = "riscv64-unknown-linux-gnu"
+#      ; profiling = false
+#      ; flambda = false
+#      ; spacetime = false
+#      ; safe_string = true
+#      ; exec_magic_number = "Caml1999X028"
+#      ; cmi_magic_number = "Caml1999I028"
+#      ; cmo_magic_number = "Caml1999O028"
+#      ; cma_magic_number = "Caml1999A028"
+#      ; cmx_magic_number = "Caml1999Y028"
+#      ; cmxa_magic_number = "Caml1999Z028"
+#      ; ast_impl_magic_number = "Caml1999M028"
+#      ; ast_intf_magic_number = "Caml1999N028"
+#      ; cmxs_magic_number = "Caml1999D028"
+#      ; cmt_magic_number = "Caml1999T028"
+#      ; natdynlink_supported = true
+#      ; supports_shared_libraries = true
+#      ; windows_unicode = false
+#      }
+#  }
+$ (cd _build/default.riscv && /home/sai/.opam/4.11.1+riscv/riscv-sysroot/bin/ocamldep -modules -intf lib/ezsqlite.mli) > _build/default.riscv/lib/.ezsqlite.objs/ezsqlite.mli.d
+$ (cd _build/default.riscv && /home/sai/.opam/4.11.1+riscv/riscv-sysroot/bin/ocamldep -modules -impl lib/ezsqlite.ml) > _build/default.riscv/lib/.ezsqlite.objs/ezsqlite.ml.d
+$ (cd _build/default.riscv && /home/sai/.opam/4.11.1+riscv/riscv-sysroot/bin/ocamlc -w -40 -g -bin-annot -I lib/.ezsqlite.objs/byte -I /home/sai/.opam/4.11.1+riscv/riscv-sysroot/lib/bigarray-compat -I /home/sai/.opam/4.11.1+riscv/riscv-sysroot/lib/cstruct -I /home/sai/.opam/4.11.1+riscv/riscv-sysroot/lib/hex -no-alias-deps -o lib/.ezsqlite.objs/byte/ezsqlite.cmi -c -intf lib/ezsqlite.mli)
+$ (cd _build/default.riscv/lib && /home/sai/Shakti-TEE-Build/riscv/bin/riscv64-unknown-linux-gnu-gcc -O2 -fno-strict-aliasing -fwrapv -fPIC -D_FILE_OFFSET_BITS=64 -D_REENTRANT -g -mcmodel=medany -g -I /home/sai/.opam/4.11.1+riscv/riscv-sysroot/lib/ocaml -I /home/sai/.opam/4.11.1+riscv/riscv-sysroot/lib/bigarray-compat -I /home/sai/.opam/4.11.1+riscv/riscv-sysroot/lib/cstruct -I /home/sai/.opam/4.11.1+riscv/riscv-sysroot/lib/hex -o ezsqlite_stubs.o -c ezsqlite_stubs.c)
+> ezsqlite_stubs.c: In function 'sqlite3_error':
+> ezsqlite_stubs.c:19:27: warning: initialization discards 'const' qualifier from pointer target type [-Wdiscarded-qualifiers]
+>    19 |     value *sqlite_error = caml_named_value("sqlite error");
+>       |                           ^~~~~~~~~~~~~~~~
+> In file included from ezsqlite_stubs.c:3:
+> ezsqlite_stubs.c: In function 'copy_s':
+> /home/sai/.opam/4.11.1+riscv/riscv-sysroot/lib/ocaml/caml/mlvalues.h:265:24: warning: passing argument 1 of 'memcpy' discards 'const' qualifier from pointer target type [-Wdiscarded-qualifiers]
+>   265 | #define String_val(x) ((const char *) Bp_val(x))
+>       |                       ~^~~~~~~~~~~~~~~~~~~~~~~~~
+> ezsqlite_stubs.c:42:16: note: in expansion of macro 'String_val'
+>    42 |         memcpy(String_val(s), b, len);
+>       |                ^~~~~~~~~~
+> In file included from ezsqlite_stubs.c:11:
+> /home/sai/Shakti-TEE-Build/riscv/sysroot/usr/include/string.h:42:14: note: expected 'void * restrict' but argument is of type 'const char *'
+>    42 | extern void *memcpy (void *__restrict __dest, const void *__restrict __src,
+>       |              ^~~~~~
+> ezsqlite_stubs.c: In function '_ezsqlite_db_create_function':
+> ezsqlite_stubs.c:122:17: warning: initialization discards 'const' qualifier from pointer target type [-Wdiscarded-qualifiers]
+>   122 |     value *fn = caml_named_value (String_val(name));
+>       |                 ^~~~~~~~~~~~~~~~
+> ezsqlite_stubs.c: In function 'commit_hook_callback':
+> ezsqlite_stubs.c:129:16: warning: initialization discards 'const' qualifier from pointer target type [-Wdiscarded-qualifiers]
+>   129 |     value *v = caml_named_value("commit hook");
+>       |                ^~~~~~~~~~~~~~~~
+> ezsqlite_stubs.c: In function 'update_hook_callback':
+> ezsqlite_stubs.c:139:16: warning: initialization discards 'const' qualifier from pointer target type [-Wdiscarded-qualifiers]
+>   139 |     value *v = caml_named_value("update hook");
+>       |                ^~~~~~~~~~~~~~~~
+> ezsqlite_stubs.c: In function 'auto_extension_callback':
+> ezsqlite_stubs.c:153:16: warning: initialization discards 'const' qualifier from pointer target type [-Wdiscarded-qualifiers]
+>   153 |     value *v = caml_named_value("auto extension");
+>       |                ^~~~~~~~~~~~~~~~
+> In file included from ezsqlite_stubs.c:3:
+> ezsqlite_stubs.c: In function '_ezsqlite_column_text':
+> /home/sai/.opam/4.11.1+riscv/riscv-sysroot/lib/ocaml/caml/mlvalues.h:265:24: warning: passing argument 1 of 'memcpy' discards 'const' qualifier from pointer target type [-Wdiscarded-qualifiers]
+>   265 | #define String_val(x) ((const char *) Bp_val(x))
+>       |                       ~^~~~~~~~~~~~~~~~~~~~~~~~~
+> ezsqlite_stubs.c:299:16: note: in expansion of macro 'String_val'
+>   299 |         memcpy(String_val(s), txt, len);
+>       |                ^~~~~~~~~~
+> In file included from ezsqlite_stubs.c:11:
+> /home/sai/Shakti-TEE-Build/riscv/sysroot/usr/include/string.h:42:14: note: expected 'void * restrict' but argument is of type 'const char *'
+>    42 | extern void *memcpy (void *__restrict __dest, const void *__restrict __src,
+>       |              ^~~~~~
+$ (cd _build/default.riscv && /home/sai/.opam/4.11.1+riscv/riscv-sysroot/bin/ocamlc -w -40 -g -bin-annot -I lib/.ezsqlite.objs/byte -I /home/sai/.opam/4.11.1+riscv/riscv-sysroot/lib/bigarray-compat -I /home/sai/.opam/4.11.1+riscv/riscv-sysroot/lib/cstruct -I /home/sai/.opam/4.11.1+riscv/riscv-sysroot/lib/hex -intf-suffix .ml -no-alias-deps -o lib/.ezsqlite.objs/byte/ezsqlite.cmo -c -impl lib/ezsqlite.ml)
+> File "lib/ezsqlite.ml", lines 286-287, characters 16-46:
+> 286 | ................Gc.finalise (fun x ->
+> 287 |             _ezsqlite_backup_finish(x.backup)).....
+> Warning 5: this function application is partial,
+> maybe some arguments are missing.
+$ (cd _build/default.riscv && /home/sai/.opam/4.11.1+riscv/riscv-sysroot/bin/ocamlc -w -40 -g -a -o lib/ezsqlite.cma -dllib -lezsqlite_stubs -cclib -lezsqlite_stubs lib/.ezsqlite.objs/byte/ezsqlite.cmo)
+$ (cd _build/default.riscv && /home/sai/.opam/4.11.1+riscv/riscv-sysroot/bin/ocamlopt -w -40 -g -I lib/.ezsqlite.objs/byte -I lib/.ezsqlite.objs/native -I /home/sai/.opam/4.11.1+riscv/riscv-sysroot/lib/bigarray-compat -I /home/sai/.opam/4.11.1+riscv/riscv-sysroot/lib/cstruct -I /home/sai/.opam/4.11.1+riscv/riscv-sysroot/lib/hex -intf-suffix .ml -no-alias-deps -o lib/.ezsqlite.objs/native/ezsqlite.cmx -c -impl lib/ezsqlite.ml)
+> File "lib/ezsqlite.ml", lines 286-287, characters 16-46:
+> 286 | ................Gc.finalise (fun x ->
+> 287 |             _ezsqlite_backup_finish(x.backup)).....
+> Warning 5: this function application is partial,
+> maybe some arguments are missing.
+$ (cd _build/default.riscv && /home/sai/.opam/4.11.1+riscv/riscv-sysroot/bin/ocamlopt -w -40 -g -a -o lib/ezsqlite.cmxa -cclib -lezsqlite_stubs lib/.ezsqlite.objs/native/ezsqlite.cmx)
+
+
+
+
+
+
+$ (cd _build/default.riscv/lib && /home/sai/Shakti-TEE-Build/riscv/bin/riscv64-unknown-linux-gnu-gcc -O2 -fno-strict-aliasing -fwrapv -fPIC -D_FILE_OFFSET_BITS=64 -D_REENTRANT -g -mcmodel=medany -g -I /home/sai/.opam/4.11.1+riscv/riscv-sysroot/lib/ocaml -I /home/sai/.opam/4.11.1+riscv/riscv-sysroot/lib/bigarray-compat -I /home/sai/.opam/4.11.1+riscv/riscv-sysroot/lib/cstruct -I /home/sai/.opam/4.11.1+riscv/riscv-sysroot/lib/hex -o sqlite3_new.o -c sqlite3_new.c)
+> sqlite3_new.c: In function 'valueFromExpr':
+> sqlite3_new.c:76075:21: warning: integer overflow in expression '-9223372036854775808' of type 'long long int' results in '-9223372036854775808' [-Woverflow]
+> 76075 |         pVal->u.r = -(double)SMALLEST_INT64;
+>       |                     ^
+$ (cd _build/default.riscv && /home/sai/.opam/4.11.1+riscv/riscv-sysroot/bin/ocamlmklib -g -o lib/ezsqlite_stubs lib/ezsqlite_stubs.o lib/sqlite3_new.o)
+$ (cd _build/default.riscv && /home/sai/.opam/4.11.1+riscv/riscv-sysroot/bin/ocamlopt -w -40 -g -shared -linkall -I lib -o lib/ezsqlite.cmxs lib/ezsqlite.cmxa)
