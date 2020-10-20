@@ -12,7 +12,7 @@ $ (cd _build/default.riscv && /home/sai/.opam/4.11.1+riscv/riscv-sysroot/bin/oca
 
 
 
-4.07.0+riscv
+4.07.0
 
 $ (cd _build/default.riscv/lib && /home/sai/.opam/4.07.0+riscv/riscv-sysroot/bin/ocamlc -g -I /home/sai/.opam/4.07.0+riscv/riscv-sysroot/lib/bigarray-compat -I /home/sai/.opam/4.07.0+riscv/riscv-sysroot/lib/cstruct -I /home/sai/.opam/4.07.0+riscv/riscv-sysroot/lib/hex -ccopt -g -ccopt -mcmodel=medany -ccopt -g -o sqlite3_new.o sqlite3_new.c)
 > sqlite3_new.c: In function 'valueFromExpr':
@@ -21,3 +21,9 @@ $ (cd _build/default.riscv/lib && /home/sai/.opam/4.07.0+riscv/riscv-sysroot/bin
 >       |                     ^
 $ (cd _build/default.riscv && /home/sai/.opam/4.07.0+riscv/riscv-sysroot/bin/ocamlmklib -g -o lib/ezsqlite_stubs lib/ezsqlite_stubs.o lib/sqlite3_new.o)
 $ (cd _build/default.riscv && /home/sai/.opam/4.07.0+riscv/riscv-sysroot/bin/ocamlopt -w -40 -g -shared -linkall -I lib -o lib/ezsqlite.cmxs lib/ezsqlite.cmxa)
+
+
+-fno-strict-aliasing
+-fwrapv
+
+riscv64-unknown-linux-gnu-gcc -g -mcmodel=medany -I /home/sai/.opam/4.11.1+riscv/riscv-sysroot/lib/ocaml -I /home/sai/.opam/4.11.1+riscv/riscv-sysroot/lib/bigarray-compat -I /home/sai/.opam/4.11.1+riscv/riscv-sysroot/lib/cstruct -I /home/sai/.opam/4.11.1+riscv/riscv-sysroot/lib/hex -o sqlite3_new.o -c sqlite3_new.c
