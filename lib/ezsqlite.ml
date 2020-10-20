@@ -284,7 +284,7 @@ module Backup = struct
             backup = _ezsqlite_backup_init dst.db dstName src.db srcName
         } in
         let _ = Gc.finalise (fun x ->
-            _ezsqlite_backup_finish(x.backup)) in b
+            _ezsqlite_backup_finish(x.backup)) b in b
 
     let step b n =
         _ezsqlite_backup_step b.backup n
