@@ -1,8 +1,6 @@
 (library
- (foreign_stubs
-  (language c)
-  (names sqlite3_new ezsqlite_stubs)
-  (flags (-g -mcmodel=medany)))
  (name ezsqlite)
  (libraries str hex)
+ (c_names sqlite3_new ezsqlite_stubs)
+ (c_library_flags -mcmodel=medany -g)
  (public_name ezsqlite))
