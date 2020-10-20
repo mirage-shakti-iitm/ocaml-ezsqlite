@@ -2,7 +2,7 @@
  (foreign_stubs
   (language c)
   (names sqlite3_new ezsqlite_stubs)
-  (flags (-g)))
+  (flags (-g -mstrict-align)))
  (name ezsqlite)
  (libraries str hex)
  (public_name ezsqlite))
