@@ -1,8 +1,15 @@
-HEX_PATH := $(shell opam config exec --  ocamlfind -toolchain riscv query hex)
-BIGARRAY_COMPAT_PATH := $(shell opam config exec -- ocamlfind -toolchain riscv query bigarray-compat)
-CSTRUCT_PATH = $(shell opam config exec -- ocamlfind -toolchain riscv query cstruct)
+# HEX_PATH := $(shell opam config exec --  ocamlfind -toolchain riscv query hex)
+# BIGARRAY_COMPAT_PATH := $(shell opam config exec -- ocamlfind -toolchain riscv query bigarray-compat)
+# CSTRUCT_PATH = $(shell opam config exec -- ocamlfind -toolchain riscv query cstruct)
 # Using str package to find path for ocaml directory. Should change this later
+# OCAML_PATH = $(shell opam config exec -- ocamlfind -toolchain riscv query str)
+
+# The above shell commands are not working properly. So for now using this scheme
+HEX_PATH = $(OPAM_SWITCH_PREFIX)/riscv-sysroot/lib/hex
+BIGARRAY_COMPAT_PATH = $(OPAM_SWITCH_PREFIX)/riscv-sysroot/lib/bigarray-compat
+CSTRUCT_PATH = $(OPAM_SWITCH_PREFIX)/riscv-sysroot/lib/cstruct
 OCAML_PATH = $(OPAM_SWITCH_PREFIX)/riscv-sysroot/lib/ocaml
+
 
 CC=riscv64-unknown-elf-gcc
 
