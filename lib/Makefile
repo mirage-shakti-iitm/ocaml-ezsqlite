@@ -1,4 +1,4 @@
-CC=riscv64-unknown-linux-gcc
+CC=riscv64-unknown-elf-gcc
 
 C_FLAGS=-mcmodel=medany -Os -fno-strict-aliasing -fwrapv -fPIC -D_FILE_OFFSET_BITS=64 -D_REENTRANT -ffunction-sections
 
