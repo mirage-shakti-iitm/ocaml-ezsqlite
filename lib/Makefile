@@ -1,6 +1,6 @@
-CC=riscv64-unknown-elf-gcc
+CC=riscv64-unknown-linux-gcc
 
-C_FLAGS=-mcmodel=medany -fno-strict-aliasing -fwrapv -fPIC -D_FILE_OFFSET_BITS=64 -D_REENTRANT -ffunction-sections
+C_FLAGS=-mcmodel=medany -Os -fno-strict-aliasing -fwrapv -fPIC -D_FILE_OFFSET_BITS=64 -D_REENTRANT -ffunction-sections
 
 C_INCLUDES=-I. -I${OPAM_SWITCH_PREFIX}/riscv-sysroot/lib/ocaml -I${OPAM_SWITCH_PREFIX}/riscv-sysroot/lib/cstruct -I${OPAM_SWITCH_PREFIX}/riscv-sysroot/lib/hex -I${OPAM_SWITCH_PREFIX}/riscv-sysroot/lib/bigarray-compat
 
