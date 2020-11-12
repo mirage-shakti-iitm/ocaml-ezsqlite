@@ -8,8 +8,15 @@ bug-reports: "https://github.com/zshipko/ocaml-ezsqlite/issues"
 dev-repo: "git+https://github.com/zshipko/ocaml-ezsqlite.git"
 doc: "https://zshipko.github.io/ocaml-ezsqlite/doc"
 build: [
+    [make "add-cap-files"]
     ["dune" "build" "-x" "riscv" "-p" "ezsqlite" "-j" jobs]
+    [make "all"]
 ]
+
+install: [
+  [make "install"]
+]
+
 depends: [
     "dune" {build}
     "hex-riscv"

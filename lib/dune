@@ -1,8 +1,5 @@
 (library
- (foreign_stubs
-  (language c)
-  (names sqlite3_new ezsqlite_stubs)
-  (flags (-g)))
  (name ezsqlite)
  (libraries str hex)
- (public_name ezsqlite))
+ (public_name ezsqlite)
+ (ocamlopt_flags (-S -function-sections)))
